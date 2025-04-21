@@ -1,0 +1,18 @@
+<h1>Candidates</h1>
+<div id="add-candidate">
+<%= link_to "Add Candidate", new_candidate_path %>
+</div>
+<div id="candidates">
+<% @candidates.each do |candidate| %>
+    <%= link_to candidate_path(candidate), class: "candidate-card" do %>
+    <div id="candidate-container">
+    <div class="candidate-name">
+    <%= candidate.name %>
+    </div>
+    <div class="candidate-status">
+    <%= candidate.status %>
+    </div>
+    </div>
+    <% end %>
+    <% end %>
+</div>
