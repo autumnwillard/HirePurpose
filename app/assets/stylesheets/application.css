@@ -8,3 +8,50 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+ a {
+    text-decoration: none;
+ }
+
+a:hover {
+    color: #dcdcdc;
+}
+
+#edit-button a {
+    color: var(--accent-text);
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    justify-content: end;
+}
+
+ nav ul {
+    list-style: none;
+ }
+
+ nav ul li a {
+    text-decoration: none;
+ }
+
+ #candidates {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+ }
+
+ .candidate-container {
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.089);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 1.5px 3.0px 3.0px hsla(0, 0%, 0%, 0.199);
+    margin-bottom: 2rem;
+    border-radius: 8px;
+ }
+
+ .candidate-name {
+    font-size: 2rem;
+ }

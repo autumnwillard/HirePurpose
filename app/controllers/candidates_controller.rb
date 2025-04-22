@@ -2,7 +2,7 @@ class CandidatesController < ApplicationController
   allow_unauthenticated_access
   before_action :set_candidate, only: %i[ show edit update ]
   def index
-    @candidates = Candidate.all
+    @candidates = Candidate.order(status: :desc)
   end
 
   def show

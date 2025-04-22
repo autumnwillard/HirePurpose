@@ -33,6 +33,6 @@
   <% end %>
 </div>
 
-<%= link_to "Edit", edit_candidate_path(@candidate) %>
+<button id="edit-button"><%= link_to "Edit", edit_candidate_path(@candidate) %></button>
 <%= link_to "Back", candidates_path %>
 <%= button_to "Delete", @candidate, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
