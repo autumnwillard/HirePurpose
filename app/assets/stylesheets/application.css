@@ -9,12 +9,29 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
+ @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      --bg: #fff;
+      --accent-bg: #f5f7ff;
+      --text: #212121;
+      --text-light: #585858;
+      --accent: #0d47a1;
+      --accent-hover: #1266e2;
+      --accent-text: var(--bg);
+      --code: #d81b60;
+      --preformatted: #444;
+      --marked: #ffdd33;
+      --disabled: #efefef;
+    }
+  }
+
  a {
     text-decoration: none;
  }
 
 a:hover {
-    color: #dcdcdc;
+    color: var(--text);
 }
 
 #edit-button a {
@@ -43,15 +60,25 @@ nav ul {
 
  .candidate-container {
     padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.089);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 1.5px 3.0px 3.0px hsla(0, 0%, 0%, 0.199);
+    background-color: color-mix(in srgb, var(--text-light), transparent 85%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
     margin-bottom: 2rem;
     border-radius: 8px;
- }
+  }
 
  .candidate-name {
     font-size: 2rem;
  }
+
+ .candidate-status {
+    justify-self: end;
+ }
+
+ 
+@media only screen and (max-width: 767px) {
+    .candidate-name {
+        font-size: 1.5rem;
+     }
+  }
