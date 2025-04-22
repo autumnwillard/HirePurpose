@@ -21,7 +21,25 @@
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
+  <nav>
+  <ul class="navbar-nav">
+   <li> <%= link_to "Home", root_path %> </li>
+        <% if authenticated? %>
+          <li class="nav-item">
+            <span class="nav-link disabled">
+              <i class="fa fa-user"></i> <%= current_user.email %>
+            </span>
+          </li>
+          <li class="nav-item">
+            <%= button_to "Log out", session_path, method: :delete %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_session_path %>
+          </li>
+        <% end %>
+      </ul>
+</nav>
   <body>
     <%= yield %>
   </body>
