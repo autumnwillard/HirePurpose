@@ -31,12 +31,17 @@ class CandidatesController < ApplicationController
     end
   end
 
+  def destroy
+    @candidate.destroy
+    redirect_to candidates_path
+  end
+
   private
     def set_candidate
       @candidate = Candidate.find(params[:id])
     end
 
     def candidate_params
-      params.expect(candidate: [ :name ])
+      params.expect(candidate: [ :name, :notes, :phone, :email, :status, :resume, :cover_letter ])
     end
 end

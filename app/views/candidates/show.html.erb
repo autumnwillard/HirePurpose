@@ -1,4 +1,38 @@
 <h1><%= @candidate.name %></h1>
+<div class="candidate-status-section">
+  <strong>Status:</strong>
+  <%= turbo_frame_tag "candidate_status" do %>
+    <%= render 'status' %>
+  <% end %>
+</div>
+<div id="candidate-info">
+    <div id="candidate-phone"><%= @candidate.phone %></div>
+    <div id="candidate-email"><%= @candidate.email %></div>
+    <% if @candidate.resume.attached? %>
+    <div id="candidate-resume">
+    <strong>Resume:</strong>
+    <%= link_to "Download", rails_blob_path(@candidate.resume, disposition: "attachment") %>
+    </div>
+    <% end %>
+    <% if @candidate.cover_letter.attached? %>
+    <div id="candidate-cover-letter">
+    <strong>Cover Letter:</strong>
+    <%= link_to "Download", rails_blob_path(@candidate.cover_letter, disposition: "attachment") %>
+    </div>
+    <% end %>
+</div>
+<div id="candidate-notes">
+<%= form_with model: @candidate do |form| %>
+    <div>
+    <%= form.label :notes, style: "display: block; font-weight: bold" %>
+    <%= form.rich_text_area :notes %>
+  </div>
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>
 
-<%= link_to "Edit", edit_cadidate_path(@candidate) %>
+<%= link_to "Edit", edit_candidate_path(@candidate) %>
 <%= link_to "Back", candidates_path %>
+<%= button_to "Delete", @candidate, method: :delete, data: { turbo_confirm: "Are you sure?" } %>

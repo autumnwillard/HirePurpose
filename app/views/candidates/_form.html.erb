@@ -3,7 +3,26 @@
       <%= form.label :name %>
       <%= form.text_field :name %>
     </div>
-  
+    <div>
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+  <div>
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+</div>
+<div>
+<%= form.label :status %>
+<%= form.select :status, Candidate.statuses.keys.map { |s| [s.humanize, s] }, 
+               { class: "form-control" } %>
+</div>
+<div>
+<%= form.label :resume, style: "display: block" %>
+<%= form.file_field :resume, accept: ".pdf,.doc,.docx,.txt,.rtf,.odt" %>
+</div>
+<%= form.label :cover_letter, style: "display: block" %>
+<%= form.file_field :cover_letter, accept: ".pdf,.doc,.docx,.txt,.rtf,.odt" %>
+</div>
     <div>
       <%= form.submit %>
     </div>
