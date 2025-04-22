@@ -1,5 +1,5 @@
-<%= form_with(model: @candidate, html: { class: "inline-edit-form" }) do |form| %>
-    <%= turbo_frame_tag "candidate_status" do %>
+<%= form_with(model: candidate, html: { class: "inline-edit-form" }) do |form| %>
+    <%= turbo_frame_tag "candidate_status_#{candidate.id}" do %>
       <div class="field inline-status-field">
         <%= form.select :status, 
                        Candidate.statuses.keys.map { |s| [s.humanize, s] },
@@ -8,3 +8,4 @@
       </div>
     <% end %>
   <% end %>
+  

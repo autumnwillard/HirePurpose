@@ -2,7 +2,7 @@
 <div class="candidate-status-section">
   <strong>Status:</strong>
   <%= turbo_frame_tag "candidate_status" do %>
-    <%= render 'status' %>
+    <%= render 'status', candidate: @candidate %>
   <% end %>
 </div>
 <div id="candidate-info">

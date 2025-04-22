@@ -4,15 +4,15 @@
 </div>
 <div id="candidates">
 <% @candidates.each do |candidate| %>
-    <%= link_to candidate_path(candidate), class: "candidate-card" do %>
     <div id="candidate-container">
     <div class="candidate-name">
-    <%= candidate.name %>
+    <%= link_to candidate.name, candidate %>
     </div>
     <div class="candidate-status">
-    <%= candidate.status %>
+    <%= turbo_frame_tag "candidate_status" do %>
+        <%= render 'status', candidate: candidate %>
+      <% end %>
     </div>
     </div>
-    <% end %>
     <% end %>
 </div>
