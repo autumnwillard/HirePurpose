@@ -57,10 +57,24 @@ body>header {
    justify-content: space-around;
    padding: .5rem 0;
    border-bottom: var(--border-width) solid var(--border);
+   margin-bottom: 1rem;
 }
 
 #logo {
    align-self: center;
+}
+
+#logo img {
+  width: 180px;
+  height: auto;
+  display: block;
+  margin-top: 0.6rem;
+}
+
+.container {
+  background-color: var(--accent-bg);
+  padding: 2rem;
+  border-radius: 8px;
 }
 
 a:hover {
@@ -116,11 +130,14 @@ nav ul {
 
  .form-button input {
    width: auto;
+   margin-top: 1rem;
  }
 
  .candidate-buttons-container {
    display: flex;
    gap: 1rem;
+   align-content: center;
+   align-self: center;
  }
 
  .candidate-buttons-container button {
@@ -155,7 +172,15 @@ nav ul {
    position: relative;
    z-index: 2;
  }
- 
+
+ #candidate-notes {
+  margin-top: 1rem;
+ }
+
+.flex-wrapper {
+  display: flex;
+  gap: 1rem;
+} 
 
  .delete-button {
    background-color: var(--secondary);
@@ -181,8 +206,8 @@ button.delete-button:enabled:hover {
    margin-bottom: 0.5rem;
  }
 
- h1.candidate-show-name {
-   margin-top: 0;
+ trix-toolbar {
+  font-size: 0.8rem;
  }
 
  button.big-button {

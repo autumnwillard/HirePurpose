@@ -19,11 +19,14 @@
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
   <header>
-  <div id="logo">HirePurpose</div>
+  <div id="logo"><%= image_tag "HirePurposeLogo.svg", alt: "Logo for HirePurpose" %></div>
   <nav>
   <ul class="navbar-nav">
    <li> <%= link_to "Home", root_path %> </li>
@@ -47,4 +50,5 @@
   <body>
     <%= yield %>
   </body>
+  <footer>© 2025 Autumn Willard. All rights reserved.</footer>
 </html>

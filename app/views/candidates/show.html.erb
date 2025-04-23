@@ -1,8 +1,11 @@
+<div class="flex-wrapper">
+<h1 class="candidate-show-name"><%= @candidate.name %></h1>
 <div class="candidate-buttons-container">
 <button id="edit-button"><%= link_to "Edit", edit_candidate_path(@candidate) %></button>
 <%= button_to "Delete", @candidate, method: :delete, class: "delete-button", data: { turbo_confirm: "Are you sure?" } %>
 </div>
-<h1 class="candidate-show-name"><%= @candidate.name %></h1>
+</div>
+<div class="container">
 <div class="candidate-status-section">
   <strong>Status:</strong>
   <%= turbo_frame_tag "candidate_status" do %>
@@ -35,5 +38,6 @@
       <%= form.submit "Save" %>
     </div>
   <% end %>
+</div>
 </div>
 <%= link_to "Back", candidates_path, class: "alt-link" %>
