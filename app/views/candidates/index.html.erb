@@ -1,12 +1,13 @@
 <h1>Candidates</h1>
 <div id="add-candidate">
-<%= link_to "Add Candidate", new_candidate_path %>
+<%= button_to "Add Candidate", new_candidate_path, method: :get, class: "big-button" %>
 </div>
 <div id="candidates">
 <% @candidates.each do |candidate| %>
     <div class="candidate-container">
+    <%= link_to "", candidate, class: "candidate-link" %>
     <div class="candidate-name">
-    <%= link_to candidate.name, candidate %>
+    <%= candidate.name %>
     </div>
     <div class="candidate-status">
     <%= turbo_frame_tag "candidate_status" do %>

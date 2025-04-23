@@ -1,4 +1,8 @@
-<h1><%= @candidate.name %></h1>
+<div class="candidate-buttons-container">
+<button id="edit-button"><%= link_to "Edit", edit_candidate_path(@candidate) %></button>
+<%= button_to "Delete", @candidate, method: :delete, class: "delete-button", data: { turbo_confirm: "Are you sure?" } %>
+</div>
+<h1 class="candidate-show-name"><%= @candidate.name %></h1>
 <div class="candidate-status-section">
   <strong>Status:</strong>
   <%= turbo_frame_tag "candidate_status" do %>
@@ -27,12 +31,9 @@
     <%= form.label :notes, style: "display: block; font-weight: bold" %>
     <%= form.rich_text_area :notes %>
   </div>
-    <div>
-      <%= form.submit %>
+    <div class="form-button">
+      <%= form.submit "Save" %>
     </div>
   <% end %>
 </div>
-
-<button id="edit-button"><%= link_to "Edit", edit_candidate_path(@candidate) %></button>
-<%= link_to "Back", candidates_path %>
-<%= button_to "Delete", @candidate, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+<%= link_to "Back", candidates_path, class: "alt-link" %>

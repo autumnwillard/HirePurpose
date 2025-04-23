@@ -8,34 +8,68 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+ :root {
+   color-scheme: dark;
+   --bg: #040316;
+   --accent-bg: #11182b;
+   --text: #eae9fc;
+   --text-light: #f8f7fc;
+   --accent: #27cbce;
+   --accent-hover: #1de2e6;
+   --secondary: #d40b0b;
+   --secondary-hover: #f00f0f;
+   --accent-text: var(--bg);
+   --code: #d4a50c;
+   --preformatted: #ccc;
+   --disabled: #111;
+ }
 
  @media (prefers-color-scheme: light) {
     :root {
       color-scheme: light;
-      --bg: #fff;
-      --accent-bg: #f5f7ff;
-      --text: #212121;
-      --text-light: #585858;
-      --accent: #0d47a1;
-      --accent-hover: #1266e2;
+      --bg: #eeeef7;
+      --accent-bg: #fbfbfe;
+      --text: #040316;
+      --text-light: #757272;
+      --accent: #13b2b5;
+      --accent-hover: rgb(25, 153, 155);
       --accent-text: var(--bg);
-      --code: #d81b60;
+      --secondary: #d40b0b;
+      --secondary-hover: #9b0b0b;
+      --code: #d4a50c;
       --preformatted: #444;
       --marked: #ffdd33;
       --disabled: #efefef;
+      --border: #c1c1d1;
+    }
+    .trix-button--icon::before {
+      filter: invert(0) !important;
+      color: var(--text) !important;
+    }
+   
+    .trix-button.trix-active {
+      background-color: rgba(var(--text-rgb, 255, 255, 255), 0.2) !important;
     }
   }
 
- a {
-    text-decoration: none;
- }
+body>header {
+   display: flex;
+   justify-content: space-around;
+   padding: .5rem 0;
+   border-bottom: var(--border-width) solid var(--border);
+}
+
+#logo {
+   align-self: center;
+}
 
 a:hover {
-    color: var(--text);
+    color: var(--accent-hover);
 }
 
 #edit-button a {
     color: var(--accent-text);
+    text-decoration: none;
 }
 
 nav ul {
@@ -60,7 +94,7 @@ nav ul {
 
  .candidate-container {
     padding: 2rem;
-    background-color: color-mix(in srgb, var(--text-light), transparent 85%);
+    background-color: var(--accent-bg);
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
@@ -76,7 +110,86 @@ nav ul {
     justify-self: end;
  }
 
+ input {
+   width: 100%;
+ }
+
+ .form-button input {
+   width: auto;
+ }
+
+ .candidate-buttons-container {
+   display: flex;
+   gap: 1rem;
+ }
+
+ .candidate-buttons-container button {
+   width: fit-content;
+   height: fit-content;
+   align-self: center;
+ }
+
  
+ .candidate-container {
+   position: relative;
+   transition: all 0.2s ease-in-out;
+   border-left: 3px solid transparent;
+ }
+ 
+ .candidate-container:hover {
+   transform: translateX(3px);
+   border-left: 3px solid var(--accent); /* A subtle blue accent, adjust color as needed */
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ }
+ 
+ .candidate-link {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 1;
+ }
+ 
+ .candidate-status {
+   position: relative;
+   z-index: 2;
+ }
+ 
+
+ .delete-button {
+   background-color: var(--secondary);
+   border-color: var(--secondary);
+   color: #f8f7fc;
+ }
+
+button.delete-button:enabled:hover {
+   background-color: var(--secondary-hover);
+   border-color: var(--secondary-hover);
+}
+
+ .trix-button--icon::before {
+   filter: invert(1);
+   color: var(--text);
+ }
+
+ .trix-button.trix-active {
+   background-color: rgba(var(--text-rgb, 255, 255, 255), 0.2) !important;
+ }
+
+ trix-editor {
+   margin-bottom: 0.5rem;
+ }
+
+ h1.candidate-show-name {
+   margin-top: 0;
+ }
+
+ button.big-button {
+   font-size: 1.5rem;
+   margin-bottom: 2rem;
+ }
+
 @media only screen and (max-width: 767px) {
     .candidate-name {
         font-size: 1.5rem;

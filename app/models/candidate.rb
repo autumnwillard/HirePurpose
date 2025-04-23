@@ -1,5 +1,5 @@
 class Candidate < ApplicationRecord
-    enum :status, [:application_received, :under_review, :rejected, :phone_screen, :technical_interview, :take_home_exercise, :final_review, :offer_extended, :hired]
+    enum :status, [:undecided, :hell_no, :not_a_fit, :on_the_fence, :shows_promise, :strong_contender, :hire_this_person]
     has_rich_text :notes
     has_one_attached :resume
     has_one_attached :cover_letter
