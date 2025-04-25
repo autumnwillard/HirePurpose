@@ -234,12 +234,6 @@ button.delete-button:enabled:hover {
    margin-bottom: 2rem;
  }
 
- #temp-cred {
-  line-height: 0;
-  font-size: .8rem;
-  color: var(--secondary);
- }
-
 @media only screen and (max-width: 720px) {
     .candidate-name {
         font-size: 1.5rem;
