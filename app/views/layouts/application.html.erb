@@ -26,7 +26,10 @@
     <%= javascript_importmap_tags %>
   </head>
   <header>
-  <div id="logo"><%= image_tag "HirePurposeLogo.svg", alt: "Logo for HirePurpose" %></div>
+  <div id="logo"><%= link_to root_path do %>
+    <%= image_tag "HirePurposeLogo.svg", alt: "Logo for HirePurpose" %>
+    <% end %>
+    </div>
   <nav>
   <ul class="navbar-nav">
    <li> <%= link_to "Home", root_path %> </li>
