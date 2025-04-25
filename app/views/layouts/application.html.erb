@@ -35,12 +35,7 @@
    <li> <%= link_to "Home", root_path %> </li>
         <% if authenticated? %>
           <li class="nav-item">
-            <span class="nav-link disabled">
-              <i class="fa fa-user"></i> <%= current_user.email %>
-            </span>
-          </li>
-          <li class="nav-item">
-            <%= button_to "Log out", session_path, method: :delete %>
+            <%= button_to "Log out", session_path, method: :delete, class:"logout-button" %>
           </li>
         <% else %>
           <li class="nav-item">

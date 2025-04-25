@@ -60,6 +60,24 @@ body>header {
    margin-bottom: 1rem;
 }
 
+.logout-button {
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--standard-border-radius);
+  color: var(--text);
+  margin: 0 .5rem 1rem;
+  padding: .1rem 1rem;
+  text-decoration: none;
+  display: inline-block;
+  background-color: var(--accent-bg);
+  line-height: 2;
+}
+
+.logout-button:enabled:hover {
+  border: var(--border-width) solid var(--accent-hover);
+  background-color: var(--accent-bg);
+  color: var(--accent-hover);
+}
+
 #logo {
    align-self: center;
 }
@@ -216,8 +234,13 @@ button.delete-button:enabled:hover {
    margin-bottom: 2rem;
  }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 720px) {
     .candidate-name {
         font-size: 1.5rem;
      }
+     .logout-button {
+      border: none;
+      padding: 0;
+      line-height: normal;
+    }
   }
