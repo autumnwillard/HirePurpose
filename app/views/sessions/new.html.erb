@@ -6,13 +6,10 @@
 <%= form_with url: session_path do |form| %>
   <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address] %><br>
   <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72 %><br>
+  <div class="flex-wrapper">
   <div class="form-button"><%= form.submit "Sign in" %></div>
+  <%= link_to "Forgot password?", new_password_path, class: "forgot-password" %>
+  </div>
 <% end %>
-<div id="temp-cred">
-<p>Email: testUser@email.com</p>
-<p>password: railsIs@wesome!</p>
-</div>
-<br>
-
-<%= link_to "Forgot password?", new_password_path %>
+<p>Don't have an account? <%= link_to "Sign Up", new_registration_path %></P>
 </div>

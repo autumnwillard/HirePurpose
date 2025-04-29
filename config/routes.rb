@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   root "candidates#index"
   resources :candidates
+  resources :registrations, only: [:new, :create]
 end

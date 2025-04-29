@@ -1,0 +1,26 @@
+<%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
+<%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
+
+<h1>Sign Up</h1>
+<div class="container">
+<%= form_with model: @user, url: registrations_url, class: "contents" do |form| %>
+  <%= form.label :email_address %>
+  <%= form.email_field :email_address, required: true, autofocus: true, value: params[:email_address] %>
+
+
+  <%= form.label :password %>
+  <%= form.password_field :password, required: true, placeholder: "Enter your password", maxlength: 72 %>
+
+
+  <%= form.label :password_confirmation %>
+  <%= form.password_field :password_confirmation, required: true, placeholder: "Confirm your password", maxlength: 72 %>
+
+
+
+  <div class="form-button">
+    <%= form.submit "Create Account" %>
+  </div>
+
+
+<% end %>
+</div>

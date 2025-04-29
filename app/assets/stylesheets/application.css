@@ -46,7 +46,7 @@
       filter: invert(0) !important;
       color: var(--text) !important;
     }
-   
+
     .trix-button.trix-active {
       background-color: rgba(var(--text-rgb, 255, 255, 255), 0.2) !important;
     }
@@ -169,19 +169,19 @@ nav ul {
    align-self: center;
  }
 
- 
+
  .candidate-container {
    position: relative;
    transition: all 0.2s ease-in-out;
    border-left: 3px solid transparent;
  }
- 
+
  .candidate-container:hover {
    transform: translateX(3px);
    border-left: 3px solid var(--accent); /* A subtle blue accent, adjust color as needed */
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
  }
- 
+
  .candidate-link {
    position: absolute;
    top: 0;
@@ -190,7 +190,7 @@ nav ul {
    height: 100%;
    z-index: 1;
  }
- 
+
  .candidate-status {
    position: relative;
    z-index: 2;
@@ -203,7 +203,7 @@ nav ul {
 .flex-wrapper {
   display: flex;
   gap: 1rem;
-} 
+}
 
  .delete-button {
    background-color: var(--secondary);
@@ -237,6 +237,12 @@ button.delete-button:enabled:hover {
    font-size: 1.2rem;
    font-weight: 500;
    margin-bottom: 2rem;
+ }
+
+ .forgot-password {
+  align-self: center;
+  font-size: 0.8rem;
+  margin-top: 10px;
  }
 
  @media only screen and (max-width: 720px) {
